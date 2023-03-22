@@ -1,6 +1,7 @@
 # Importar las librerías necesarias
 import numpy as np
 from sklearn.linear_model import LogisticRegression
+import pandas as pd
 
 # Definir las características de entrada y etiquetas de salida
 # En este ejemplo, se utiliza una matriz de características de 20x10
@@ -24,3 +25,6 @@ predicted_label = lr.predict(new_signal.T)
 
 # Imprimir la etiqueta de salida predicha
 print("Etiqueta de salida predicha:", predicted_label[0])
+data=pd.DataFrame(X)
+data["label"] = y
+data.to_csv("data.csv")
