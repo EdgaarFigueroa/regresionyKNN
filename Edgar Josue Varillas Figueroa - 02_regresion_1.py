@@ -25,6 +25,8 @@ predicted_label = lr.predict(new_signal.T)
 
 # Imprimir la etiqueta de salida predicha
 print("Etiqueta de salida predicha:", predicted_label[0])
+
+# Creating a DataFrame with the characteristics matrix and the label array to export a file csv
 data=pd.DataFrame(X)
 data["label"] = y
 data.to_csv("data.csv")
